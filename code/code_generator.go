@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package code
 
 type LinkedCodeOption struct {
 	option         CodeOption
@@ -32,7 +30,7 @@ func (l *LinkedCodeOption) extractCode(code *Code) {
 func GenerateAllCodes() []Code {
 	allCodes := make([]Code, 6720)
 
-	optionsInCode := 7
+	optionsInCode := 5
 	code := make([]LinkedCodeOption, optionsInCode)
 
 	// initialize code to 0s and link them
@@ -55,8 +53,7 @@ func GenerateAllCodes() []Code {
 		code[optionsInCode-1].extractCode(&extractedCode)
 
 		if extractedCode.IsValid() {
-			//allCodes[count] = extractedCode
-			fmt.Println(extractedCode)
+			allCodes[count] = extractedCode
 			count++
 		}
 

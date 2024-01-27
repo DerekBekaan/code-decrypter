@@ -1,8 +1,6 @@
-package main
+package code
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestGenerateAllCodes(t *testing.T) {
 	expectedSize := 6720
