@@ -33,6 +33,10 @@ func main() {
 			}
 
 			// front load the good codes
+			for possibleCodes[firstBadCode-1].CompareTo(guess) != result {
+				firstBadCode--
+			}
+
 			for i := 0; i < firstBadCode; i++ {
 				if possibleCodes[i].CompareTo(guess) != result {
 					// swap the first good code
@@ -42,7 +46,6 @@ func main() {
 					firstBadCode--
 				}
 
-				// trim the end to avoid swapping
 				for possibleCodes[firstBadCode-1].CompareTo(guess) != result {
 					firstBadCode--
 				}
