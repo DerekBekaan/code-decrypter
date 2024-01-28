@@ -1,12 +1,12 @@
 package code
 
-type CodeOption int
+type CodeOption byte
 
 type Code []CodeOption
 
 type ComparissonResult struct {
-	Correct    int
-	WrongPlace int
+	Correct    byte
+	WrongPlace byte
 }
 
 func (c Code) IsValid() bool {

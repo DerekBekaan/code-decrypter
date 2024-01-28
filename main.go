@@ -13,6 +13,7 @@ func main() {
 	maxGuesses := 0
 	avgGuesses := make([]int, numberOfGames)
 	possibleCodes := code.GenerateAllCodes()
+	optionsInCode := byte(len(possibleCodes[0]))
 
 	for gi := 0; gi < numberOfGames; gi++ {
 		codeIndex := rand.Intn(len(possibleCodes) - 1)
@@ -24,7 +25,7 @@ func main() {
 			guess := possibleCodes[0]
 			result := guess.CompareTo(game.CodeToGuess)
 
-			if result.Correct == len(game.CodeToGuess) {
+			if result.Correct == optionsInCode {
 				if count > maxGuesses {
 					maxGuesses = count
 				}
